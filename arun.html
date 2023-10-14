@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ARUN</title>
+        <title>Simple Notepad</title>
+    <style>
+        textarea {
+            width: 70%;
+            height: 250px;
+        }
+    </style>
+    </head>
+    <body>
+      <center>
+        <h1>ARUN KUMAR'S PAGE</h1>
+        <h4>(STUDENT)</h4>
+        <hr>
+         </center>
+         <center>
+            <h3>Simple Notepad</h3>
+            <textarea id="editor"></textarea>
+            <br>
+            <button onclick="saveText()">Save</button>
+            
+            <script>
+                function saveText() {
+                    var textToSave = document.getElementById("editor").value;
+                    var blob = new Blob([textToSave], { type: "text/plain" });
+                    var url = window.URL.createObjectURL(blob);
+                    var a = document.createElement("a");
+                    a.href = url;
+                    a.download = "notepad.txt";
+                    a.click();
+                }
+            </script>
+        </center>
+        <br>
+        <hr>
+    </body>
+</html>

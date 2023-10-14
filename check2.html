@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PASSWORD PAGE</title>
+</head>
+<body>
+    <center>
+    <h1>PASSWORD PAGE</h1>
+    <hr>
+    <form id="loginForm">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <br>
+        <input type="submit" value="Login">
+    </form>
+    </center>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            var enteredPassword = document.getElementById("password").value;
+            var correctPassword = "9876";
+
+            if (enteredPassword === correctPassword) {
+                // Redirect to a new website
+                window.location.href = "SUDAR.HTML"; // Change this URL to your desired destination
+            } else {
+                alert("Incorrect password. Please try again.");
+            }
+        });
+    </script>
+</body>
+</html>
